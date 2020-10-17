@@ -1,0 +1,237 @@
+
+body{
+    background-color:#EAEAEA;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 13px;}
+
+aside {
+    display: inline-block;
+    vertical-align: top;
+    width: 22%;
+    margin-right: 15px;}
+
+section{
+    margin-right: 15px;
+    display: inline-block;
+    width: 72%;
+    background-color:white;
+    border-radius: 15px;
+    padding:18px ;}
+
+
+
+header {
+    background-color:#2F5779;
+    text-align: center;
+    position: relative;
+    margin-bottom: 3%;}
+
+ header img{
+    width: 20%;
+    height: 20%;}
+
+a:link {
+    color: black;}
+
+a { 
+    font-weight: 600;
+    padding:1px;}
+
+ul{
+    list-style-type: none;}
+
+nav{
+    background-color:#EAEAEA;
+}
+
+nav li{
+    font-weight: lighter;
+    float: right;
+    padding:15px 3px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding-right: 10px;
+    padding-bottom: 50px;
+}
+
+.Header_sideMenu{
+    background-color: #2F5779;
+    font-weight:bolder;
+    color:white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 13px;
+}
+
+.sideMenu_links li{
+    padding:4px;
+}
+
+.sideMenu_links ul{
+    margin-top: 0; }
+
+.sideMenu_links{
+    margin-left: 10px;
+    background-color:#507088;
+    color:white;}
+
+.sideMenu_bar{
+    margin-left: 10px;
+    padding-bottom: 10px;
+    background-color:white;
+    color:grey;
+    border-color: grey;
+    box-shadow: 0 8px 6px -6px black;
+    box-shadow: 1px 1px #888888;}
+
+.sideMenu_content{
+    margin: 0px 7px;}
+
+.progressBar
+{
+    background-color: #F5F5F5;
+    height: 16px;
+    margin-bottom: 9px;}
+
+.purpleBar
+{
+    background-color: #5C4A75;
+    width: 40%;}
+
+.greenBar
+{
+    background-color: #5D834A;
+    width: 25%;}
+
+.orangeBar
+{
+    background-color: #DF8533;
+    width: 70%;}
+
+.Simple_Cubes {
+    display: block;
+    width: 100%}
+
+.Simple_Cubes div{
+    display: inline-block;
+    width: 18%;
+    margin: 8px;
+    padding: 0px 20px 0px 20px ;
+    border-radius: 10px;
+    text-align: center;
+    color:white;}
+
+.greenCube {
+    background-color: #53AD5B;
+}
+
+.yellowCube {
+    background-color: #F4C242;
+}
+
+.purpleCube {
+    background-color: #67359A;
+}
+
+.redCube {
+    background-color: #913339;
+}
+
+
+.Simple_Cubes img {
+    width:50px;
+    height:50px;
+    vertical-align:"top";
+}
+
+.club_Header{
+padding-left: 22px;
+font-weight: bolder;
+}
+
+
+
+.panels h1{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    margin: 0px;
+    font-size:25px;
+    font-weight: lighter;
+}
+
+.panels div{
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    width: 31.45%;
+    border-radius: 3px;
+    text-align: center;
+    color:white;
+    padding: 0px 1px ;
+    margin :0px 5px;
+
+}
+
+.bluePanel {
+    background-color: #BDE8EF;
+}
+
+.yellowPanel {
+    background-color: #FBECCD;
+}
+.redPanel {
+    background-color: #EBCCD2;
+}
+
+.panels img {
+    width:100%;
+    height:75px;
+    background-color: pink;
+    margin: 0px;
+    padding: 0px;
+}
+
+.panels p{
+    font-size:11px;
+    background-color:white;
+    color: grey;
+    margin:-4px 0px 1px 0px;
+}
+
+.users div {
+    display: inline-block;
+    padding: 10px 10px;
+    width: 20%;
+    text-align: center;
+    background-color: #527A90;
+    margin: 9.8px;
+}
+
+.users img {
+    margin-top: 20px;
+    border-radius: 50%;
+    width:110px;
+    height:110px;
+    text-align: center;
+}
+
+.users button {
+    background-color: #CAE0F0;
+    margin-top: 25px;
+    height:10px;
+    padding-top: 3px;
+    padding-bottom: 20px;
+    border-radius: 11%;
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    border-style: none;
+
+}
+
