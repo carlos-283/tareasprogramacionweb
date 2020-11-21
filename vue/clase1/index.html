@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <hr>
+        <label for="fruta">Fruta:</label> 
+        <input type="text" id="fruta" v-model="nuevaFruta"/>
+        <button type="submit" v-on:click="agregarFruta">agregar</button>
+        <hr>
+        <h5>Mis frutas</h5>
+        <ul class="list-group">
+            <li v-for="(fruta) in frutas" class="list-group-item">{{fruta}}</li>
+        </ul>
+        <hr>
+        <h5>Mis inventario de frutas</h5>
+        <ul class="list-group">
+            <li v-for="(fruta) in frutas2" class="list-group-item">{{fruta.nombre}}
+            <input type="number"
+            v-model="fruta.cantidad"
+             />
+             <button type="submit" @click="fruta.cantidad++">+</button>
+             <button type="submit" @click="fruta.cantidad--">-</button>
+             <span v-if="fruta.cantidad ===0">No hay fruta en el almacen</span>
+            </li>
+        </ul>
+        <h5 :class="colorTotal"> Mi cantidad de frutas es : {{ sumarFrutas }}</h5>
+
+    </div>
+    <script src="main.js"></script>
+    <script>
+        app.mount('#app');
+    </script>
+
+
+</body>
+</html>
