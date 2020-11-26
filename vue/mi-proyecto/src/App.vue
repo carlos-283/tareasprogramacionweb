@@ -1,17 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Que onda psss" />
+  <ListaElementos titulo="aaaaa" :elementos="frutas"/>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import ListaElementos from "./components/ListaElementos.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    HelloWorld,
+    ListaElementos,
+
+  },
+
+  data(){
+    return{
+      titulo:"Mis frutas",
+      frutas:[
+        {id:1 , nombre: 'Manzana' , cantidad:10} , 
+        {id:2 , nombre: 'Uva' , cantidad:10} , 
+        {id:3 , nombre: 'Pera' , cantidad:10} , 
+      ]
+    }
   }
-}
+};
 </script>
 
 <style>
