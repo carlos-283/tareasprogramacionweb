@@ -1,28 +1,22 @@
 <template>
-  <div class="home">
-    <div class="Home">
-      <h1>Personas</h1>
-      <Table :items="allPersonas" :fields="fields" >
-             <template slot="actions" slot-scope="{ item } ">
-            <b-button
-              size="sm"
-              variant="outline-primary"
-              @click="onEditar(item)"
-            >
-              Editar
-            </b-button>
+  <div class="Home">
+    <h1>Personas</h1>
+    <Table :items="allPersonas" :fields="fields">
+      <template slot="actions" slot-scope="{ item }">
+        <b-button size="sm" variant="outline-primary" @click="onEditar(item)">
+          Editar
+        </b-button>
 
-            <b-button
-              size="sm"
-              class="ml-2"
-              variant="outline-danger"
-              @click="onEliminar(item)"
-            >
-              Eliminar
-            </b-button>
-        </template>
-      </Table>
-    </div>
+        <b-button
+          size="sm"
+          class="ml-2"
+          variant="outline-danger"
+          @click="onEliminar(item)"
+        >
+          Eliminar
+        </b-button>
+      </template>
+    </Table>
   </div>
 </template>
 
@@ -47,18 +41,19 @@ export default {
           label: "telefono",
           formatter: (value) => value || "Sin informacion",
         },
+        { key: "actions", label: "Acciones" },
       ],
     };
   },
   computed: {
-     ...mapGetters(['allPersonas'])
+    ...mapGetters(["allPersonas"]),
   },
-  methods:{
-         ...mapActions(['setPersonas'])
+  methods: {
+    ...mapActions(["setPersonas"]),
   },
-  created(){
-    console.log("entro")
-  this.setPersonas();
-  }
+  created() {
+    console.log("entro");
+    this.setPersonas();
+  },
 };
 </script>

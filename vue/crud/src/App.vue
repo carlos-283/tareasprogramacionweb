@@ -4,8 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
-    <notifications position="bottom right"/>
+    <router-view class="container mt-4" />
+    <notifications position="bottom right" />
   </div>
 </template>
 
