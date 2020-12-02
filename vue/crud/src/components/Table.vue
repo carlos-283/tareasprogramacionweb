@@ -16,11 +16,9 @@
     :fields="fields"
     >
    
-        <template #cell(actions)="data">
-
-          <slot name="actions" :items="data">    </slot>
-
-        </template>
+      <template #cell(actions)="data">
+                <slot name="actions" :item="data"></slot>
+            </template>
     
     </b-table>
   </div>

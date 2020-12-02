@@ -3,14 +3,23 @@
     <div class="Home">
       <h1>Personas</h1>
       <Table :items="allPersonas" :fields="fields" >
-        <template  slot="actions" slot-scope="{ item }">
-              <b-button
+             <template slot="actions" slot-scope="{ item } ">
+            <b-button
               size="sm"
               variant="outline-primary"
               @click="onEditar(item)"
-              >
-                  Editar - {{item}}
-              </b-button>
+            >
+              Editar
+            </b-button>
+
+            <b-button
+              size="sm"
+              class="ml-2"
+              variant="outline-danger"
+              @click="onEliminar(item)"
+            >
+              Eliminar
+            </b-button>
         </template>
       </Table>
     </div>
