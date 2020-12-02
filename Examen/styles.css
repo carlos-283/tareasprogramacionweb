@@ -103,13 +103,15 @@ footer img {
 
 .copyrigthtContainer
 {
+    display: inline-block;
     background-color: grey;
-    width: 30%;
+    width: 75%;
 }
 
 .socialContainer
 {
-    width: 30%;
+    display: inline-block;
+    width: 20%;
     background-color: blue;
 }
 
