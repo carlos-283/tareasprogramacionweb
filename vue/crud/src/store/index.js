@@ -5,30 +5,79 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    personas: []
+    peliculas: [],
+    generos: []
   },
   mutations: {
-    SET_PERSONAS(state, dataPersonas) {
-      state.personas = dataPersonas
+    SET_PELICULAS(state, _peliculas) {
+      state.peliculas = _peliculas
+    },
+    SET_GENEROS(state, _generos) {
+      state.generos = _generos
     }
   },
   actions: {
-    setPersonas({ commit }) {
+
+    setPeliculas({ commit }) {
       axios.get('http://localhost:3000/').then(response => {
-        console.log(response.data)
-        commit('SET_PERSONAS', response.data)
-      }
-      )
+        commit('SET_PELICULAS', response.data)
+      })
     },
-    agregarPersona({ commit }, { params, onComplete, onError }) {
+    agregarPelicula({ commit }, { params, onComplete, onError }) {
       axios.post('http://localhost:3000/', params).then(onComplete).catch
         (onError)
-    }
+    },
+    editarPelicula({ commit }, { params, onComplete, onError }) {
+      axios.put(`http://localhost:3000/${params.id}`, params).then(onComplete).catch
+        (onError)
+    },
+    obtenerPelicula({ commit }, { id, onComplete, onError }) {
+      axios.get(`http://localhost:3000/${id}`)
+        .then(onComplete)
+        .catch(onError)
+    },
+    eliminarPelicula({ commit }, { id, onComplete, onError }) {
+      axios.delete(`http://localhost:3000/${id}`)
+        .then(onComplete)
+        .catch(onError)
+    },
+
+
+
+
+    setGeneros({ commit }) {
+      axios.get('http://localhost:3000/generos').then(response => {
+        commit('SET_GENEROS', response.data)
+      })
+    },
+    agregarGenero({ commit }, { params, onComplete, onError }) {
+      axios.post('http://localhost:3000/generos', params).then(onComplete).catch
+        (onError)
+    },
+    editarGenero({ commit }, { params, onComplete, onError }) {
+      axios.put(`http://localhost:3000/generos/${params.id}`, params).then(onComplete).catch
+        (onError)
+    },
+    obtenerGenero({ commit }, { id, onComplete, onError }) {
+      axios.get(`http://localhost:3000/generos/${id}`)
+        .then(onComplete)
+        .catch(onError)
+    },
+    eliminarGenero({ commit }, { id, onComplete, onError }) {
+      axios.delete(`http://localhost:3000/generos/${id}`)
+        .then(onComplete)
+        .catch(onError)
+    },
+
+
+
+
   },
   modules: {
   }
   ,
   getters: {
-    allPersonas: (state) => (state.personas)
+    allPeliculas: (state) => (state.peliculas),
+    allGeneros: (state) => (state.generos)
   }
 })

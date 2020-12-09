@@ -1,10 +1,10 @@
 <template>
   <div class="Home">
-    <h1>Peliculas</h1>
-    <b-button variant="primary" class="float rigth mb-3" to="Agregar">
+    <h1>Generos</h1>
+       <b-button variant="primary" class="float rigth mb-3" to="AgregarGenero">
       Agregar
     </b-button>
-    <Table :items="allPeliculas" :fields="fields">
+    <Table :items="allGeneros" :fields="fields">
       <template slot="actions" slot-scope="{ item }">
         <b-button size="sm" variant="outline-primary" @click="onEditar(item)">
           Editar
@@ -12,7 +12,7 @@
 
         <b-button
           size="sm"
-          class="ml-2"
+          class="ml-1"
           variant="outline-danger"
           @click="onEliminar(item)"
         >
@@ -37,22 +37,16 @@ export default {
     return {
       fields: [
         { key: "id", label: "clave" },
-        { key: "titulo", label: "Titulo" },
-        { key: "director", label: "Director" },
-        {
-          key: "año",
-          label: "Año",
-        },
         { key: "genero", label: "Genero" },
         { key: "actions", label: "Acciones" },
       ],
     };
   },
   computed: {
-    ...mapGetters(["allPeliculas"]),
+    ...mapGetters(["allGeneros"]),
   },
   methods: {
-    ...mapActions(["setPeliculas", "eliminarPelicula"]),
+    ...mapActions(["setGeneros", "eliminarGenero"]),
     onEditar(item) {
       console.log(item);
       this.$router.push({
@@ -63,14 +57,14 @@ export default {
       });
     },
     onEliminar(item) {
-      this.eliminarPelicula({
+      this.eliminarGenero({
         id: item.item.id,
         onComplete: (response) => {
           this.$notify({
             type: "success",
             title: response.data.mensaje,
           });
-          setTimeout(() => this.setPeliculas(), 1000);
+          setTimeout(() => this.setGeneros(), 1000);
         },
         onError: (error) => {
           this.$notify({
@@ -83,7 +77,7 @@ export default {
   },
   created() {
     console.log("entro");
-    this.setPeliculas();
+    this.setGeneros();
   },
 };
 </script>

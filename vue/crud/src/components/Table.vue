@@ -1,9 +1,5 @@
 <template>
   <div>
-    <h1>{{ titulo }}</h1>
-    <b-button variant="danger" class="float rigth mb-3" to="Agregar">
-      Agregar
-    </b-button>
     <b-table striped bordered :items="items" :fields="fields">
       <template #table-busy>
         <div class="text-center text-danger my-2">

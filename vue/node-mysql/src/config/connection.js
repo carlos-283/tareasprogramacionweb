@@ -5,7 +5,7 @@ const objetConnection = {
     "port": 8889,
     "user": "root",
     "password": "root",
-    "database": "crud_node2"
+    "database": "bd_peliculas"
 }
 
 const myConn = mysql.createConnection(objetConnection);

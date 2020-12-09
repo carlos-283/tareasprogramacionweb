@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Inicio</router-link>  |
+      <router-link to="/Home">Peliculas</router-link>  |
+       <router-link to="/Generos">Generos</router-link>
     </div>
     <router-view class="container mt-4" />
     <notifications position="bottom right" />

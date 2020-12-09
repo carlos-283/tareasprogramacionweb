@@ -16,7 +16,8 @@ app.use(express.urlencoded({ extended: true }))
 require('./config/connection');
 
 //Rutas
-app.use(require('./routes/personasRoute'));
+app.use(require('./routes/generosRoute'));
+app.use(require('./routes/peliculasRoute'));
 
 //Levantar el servidor
 app.listen(app.get('port'), (error) => {
