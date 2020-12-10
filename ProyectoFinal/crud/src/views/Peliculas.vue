@@ -1,42 +1,40 @@
 <template>
   <div class="Home">
-    <h1>Inicio</h1>
-    <b-form-select
-      v-model="generoActual"
-      :options="
-        allGeneros.map(({ id, genero }) => {
-          return { value: id, text: genero };
-        })
-      "
-    ></b-form-select>
-    <hr />
+    <h1>Peliculas</h1>
+    <b-button variant="primary" class="float rigth mb-3" to="Agregar">
+      Agregar
+    </b-button>
+    <Table :items="allPeliculas" :fields="fields">
+      <template slot="actions" slot-scope="{ item }">
+        <b-button size="sm" variant="outline-primary" @click="onEditar(item)">
+          Editar
+        </b-button>
 
-   <Tarjeta
-      v-for="pelicula in peliculasActuales"
-      v-bind:key="pelicula.id"
-      :id="pelicula.id"
-      :titulo="pelicula.titulo"
-      :director="pelicula.director"
-      :genero="pelicula.genero"
-      :ano="pelicula.año"
-    />
-
+        <b-button
+          size="sm"
+          class="ml-2"
+          variant="outline-danger"
+          @click="onEliminar(item)"
+        >
+          Eliminar
+        </b-button>
+      </template>
+    </Table>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import { mapActions, mapGetters } from "vuex";
-import Tarjeta from "../components/Tarjeta.vue";
- 
+import Table from "../components/Table.vue";
+
 export default {
-  name: "Home",
+  name: "Peliculas",
   components: {
-    Tarjeta,
+    Table,
   },
   data() {
     return {
-      generoActual: -1,
       fields: [
         { key: "id", label: "clave" },
         { key: "titulo", label: "Titulo" },
@@ -46,20 +44,15 @@ export default {
           label: "Año",
         },
         { key: "genero", label: "Genero" },
+        { key: "actions", label: "Acciones" },
       ],
     };
   },
   computed: {
-    ...mapGetters(["allPeliculas", "allGeneros"]),
-    peliculasActuales() {
-      if (this.generoActual === -1) return this.allPeliculas;
-      return this.allPeliculas.filter(
-        ({ genero_id }) => genero_id === this.generoActual
-      );
-    },
+    ...mapGetters(["allPeliculas"]),
   },
   methods: {
-    ...mapActions(["setPeliculas", "eliminarPelicula", "setGeneros"]),
+    ...mapActions(["setPeliculas", "eliminarPelicula"]),
     onEditar(item) {
       console.log(item);
       this.$router.push({
@@ -70,6 +63,7 @@ export default {
       });
     },
     onEliminar(item) {
+      console.log(item);
       this.eliminarPelicula({
         id: item.item.id,
         onComplete: (response) => {
@@ -91,7 +85,6 @@ export default {
   created() {
     console.log("entro");
     this.setPeliculas();
-    this.setGeneros();
   },
 };
 </script>
