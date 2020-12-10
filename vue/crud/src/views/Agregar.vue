@@ -2,40 +2,52 @@
   <div class="container">
     <h1>Agregar pelicula</h1>
     <b-form @submit.prevent="guardarPelicula()">
-      <Input
-        v-model="pelicula.titulo"
-        label="Titulo"
-        placeholder="Ingrese titulo de la pelicula"
-        id="a"
-        :error="erroresValidacion && !validacionNombre"
-        mensajeError="El titulo es obligatorio y de maximo 120 caracteres"
-      />
-      <Input
-        v-model="pelicula.director"
-        label="Director"
-        placeholder="Ingrese director de la pelicula"
-        id="a"
-        :error="erroresValidacion && !validacionDirector"
-        mensajeError="El director es obligatorio y de maximo 100 caracteres"
-      />
-      <Input
-        v-model="pelicula.año"
-        label="Año"
-        placeholder="Ingrese año de la pelicula"
-        id="a"
-        :error="erroresValidacion && !validacionAño"
-        mensajeError="El año es obligatorio y debe tener 4 digitos"
-      />
-      <Input
-        v-model="pelicula.genero"
-        label="Genero"
-        placeholder="Ingrese genero de la pelicula"
-        id="a"
-        :error="erroresValidacion && !validacionGenero"
-        mensajeError="El genero es obligatorio"
-      />
-      <label> sadsad </label>
-      <b-form-select :options="options"></b-form-select>
+      <div class="row">
+        <div class="col">
+          <Input
+            v-model="pelicula.titulo"
+            label="Titulo"
+            placeholder="Ingrese titulo de la pelicula"
+            id="a"
+            :error="erroresValidacion && !validacionNombre"
+            mensajeError="El titulo es obligatorio y de maximo 120 caracteres"
+          />
+        </div>
+        <div class="col">
+          <Input
+            v-model="pelicula.director"
+            label="Director"
+            placeholder="Ingrese director de la pelicula"
+            id="a"
+            :error="erroresValidacion && !validacionDirector"
+            mensajeError="El director es obligatorio y de maximo 100 caracteres"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <Input
+            v-model="pelicula.año"
+            label="Año"
+            placeholder="Ingrese año de la pelicula"
+            id="a"
+            :error="erroresValidacion && !validacionAño"
+            mensajeError="El año es obligatorio y debe tener 4 digitos"
+          />
+        </div>
+        <div class="col">
+          <label> Genero </label>
+          <b-form-select
+            :options="
+              allGeneros.map(({ id, genero }) => {
+                return { value: id, text: genero };
+              })
+            "
+          ></b-form-select>
+        </div>
+      </div>
+
       <b-button type="submit" variant="success" class="float-right mt-3">
         Guardar
       </b-button>

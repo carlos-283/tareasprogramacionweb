@@ -2,7 +2,7 @@ const connection = require('../config/connection');
 
 function listar(req, res) {
     if (connection) {
-        let sql = 'select * from peliculas';
+        let sql = 'select * from peliculas p inner join generos g on p.genero_id=g.id';
         connection.query(sql, (err, peliculas) => {
             if (err) {
                 res.json(err);

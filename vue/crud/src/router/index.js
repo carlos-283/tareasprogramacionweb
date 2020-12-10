@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Generos from '../views/Generos.vue'
+import Inicio from '../views/Inicio.vue'
 import Agregar from '../views/Agregar.vue'
 import Editar from '../views/Editar.vue'
-import Generos from '../views/Generos.vue'
 import AgregarGenero from '../views/AgregarGenero.vue'
 
 Vue.use(VueRouter)
@@ -18,6 +19,11 @@ const routes = [
     path: '/generos',
     name: 'Generos',
     component: Generos
+  },
+  {
+    path: '/inicio',
+    name: 'Inicio',
+    component: Inicio
   },
   {
     path: '/about',
